@@ -1,0 +1,520 @@
+:root {
+  --first-color: #7f7f7f;
+  --second-color: #ffffff;
+  --headings: "Raleway", sans-serif;
+  --body: "Nunito", sans-serif;
+}
+
+body { /* Warna bg tengah*/
+  font-family: var(--body); 
+  background-color: #292a2d; 
+  color: #ffffff;
+}
+
+html, body {
+  overflow-x:hidden;}
+
+#navbar { /*Warna atas*/
+  max-width: 10000px;
+  position: fixed;
+  background-color: #162450;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.navbar-brand {
+  margin: 0px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline;
+  list-style: none;
+  line-height: 42px;
+  margin-left: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 100ms ease-in-out;
+}
+
+nav li a:hover {
+  color: var(--first-color);
+}
+nav li.active a {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 50%,
+    #133298 50%
+  );
+}
+
+nav li.active a:hover {
+  color: #ffffff;
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.head {
+  padding: 250px 0px 250px 100px;
+}
+h1 {
+  font-family: var(--headings);
+  font-weight: 300;
+  font-size: 80px;
+  margin-bottom: 0;
+}
+
+.about {
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--headings);
+  font-weight: 300;
+  margin: 0px 50px;
+}
+
+.selection {
+  text-align: center;
+}
+.curious-for-more {
+  font-weight: 200;
+}
+
+h3 {
+  font-family: var(--body);
+  font-weight: 200;
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.education,
+.why-work-with-me {
+  text-align: right;
+}
+
+.weather-app,
+.eighties-app {
+  margin: 0px 0px 20px 0px;
+}
+
+.contact-button,
+.about-button,
+.work-button,
+.second-contact-button,
+.launch-button {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+  background: var(--first-color);
+  border-radius: 12px;
+  padding: 15px 30px;
+}
+
+.contact-button:hover,
+.about-button:hover,
+.work-button:hover,
+.second-contact-button:hover,
+.launch-button:hover,
+.third-contact-button:hover {
+  background-color: var(--second-color);
+  transition: 0.3s ease !important;
+  color: #ffffff;
+}
+
+.process-titles {
+  text-align: center;
+  font-size: 25px;
+
+}
+
+.icon {
+  width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+
+.miniicon{
+  width: 40px;
+}
+
+hr {
+  color: var(--second-color);
+  margin: 30px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 200;
+  margin: 25px 50px;
+  text-align: justify;
+}
+
+.project-info {
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  font-size: 50px;
+}
+
+.about-intro {
+  text-align: center;
+}
+
+.youtube-intro {
+  text-align: center;
+}
+
+.cv {
+  display: block;
+  text-align:center;
+  text-decoration: none;
+  color: var(--first-color);
+  font-size: 20px;
+  transition: 0.3s ease !important;
+}
+
+.cv:hover {
+  color: var(--second-color);
+  font-size: 23px;
+  transition: 0.3s ease !important;
+}
+
+.third-contact-button {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.work-image {
+  width: 500px;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.project-image {
+  width: 500px;
+  border-radius: 20px;
+  display: block;
+  margin: 10px 10px;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+.about-button {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin: 30px auto;
+  width: 170px;
+}
+
+.subscribe {
+  color: var(--second-color);
+  text-decoration: none;
+}
+
+.subscribe:hover {
+  color: var(--first-color);
+  transition: 0.3s ease;
+}
+
+footer {
+  text-align: center;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social {
+  color: var(--first-color);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.social:hover {
+  color: var(--second-color);
+  transition: 0.3s ease;
+  font-weight: 400;
+}
+
+.email {
+  color: var(--first-color);
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.work-button,
+.second-contact-button {
+  margin: 0px 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.icons {
+  color: var(--first-color);
+}
+i {
+  margin: 0px 3px;
+}
+
+.work {
+  margin: 50px 0px;
+}
+
+.third-contact-button {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 300;
+  text-decoration: none;
+  background: var(--first-color);
+  border-radius: 12px;
+  padding: 15px 30px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact {
+  vertical-align: middle;
+  margin: 30px 0px;
+  text-align: center;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 25px;
+}
+
+.contact-image,
+.index-image,
+.work-image {
+  width: 600px;
+}
+
+.curiosities-image {
+  width: 600px;
+  display:block;
+  margin:0 auto;
+}
+
+.about-image {
+  display:block;
+  margin:0 auto;
+  width: 700px;
+}
+
+.form-control {
+  width: 520px;
+  font-family: var(--body);
+}
+
+.message {
+  text-align: center;
+}
+
+.btn {
+  background: var(--first-color);
+  border-color: var(--first-color);
+  font-family: var(--headings);
+}
+
+.btn:hover {
+  background: var(--second-color);
+  border-color: var(--second-color);
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  nav li {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .curious-for-more {
+    margin-top: 40px;
+  }
+  .contact-me {
+    margin-top: 0px;
+  }
+  h3 {
+    font-size: 25px;
+    text-align: center;
+    margin: 10px;
+  }
+  .contact-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 170px;
+  }
+  .process-titles {
+    text-align: center;
+    font-size: 30px;
+  }
+  .skills {
+    display: block;
+    margin: 0 auto;
+  }
+  .intro {
+    font-size: 30px;
+  }
+  .projects {
+    display: block;
+    margin: 0 auto;
+  }
+  .project-image {
+    max-width: 350px;
+    margin: 20px auto;
+  }
+  iframe {
+    display: block;
+    margin: 0 auto;
+    width: 380px;
+    height: 300px;
+  }
+  .about-button {
+    margin: 10px auto;
+  }
+  .col-sm-4 {
+    display: inline;
+    width: 85px;
+    text-align: center;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 200;
+    margin: 10px 15px;
+  }
+  h2 {
+    margin: 0px 15px;
+    font-size: 30px;
+  }
+  .buttons {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 190px;
+  }
+  .work-button,
+  .second-contact-button {
+    display: block;
+    margin: 15px auto;
+    font-size: 15px;
+  }
+  .launch-button {
+    display: block;
+    margin: 0 auto;
+    font-size: 13px;
+    width: 170px;
+    text-align: center;
+  }
+  .work {
+    margin: 5px;
+  }
+  .weather-app,
+  .eighties-app {
+    text-align: center;
+  }
+  .third-contact-button {
+    margin: 10px auto;
+  }
+  .contact {
+    margin: 10px;
+  }
+  .contact-info {
+    font-size: 20px;
+  }
+  .form-control {
+    width: 250px;
+  }
+  .index-mobile-image,
+  .about-mobile-image,
+  .work-mobile-image {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+.contact-mobile-image {
+  width: 250px;
+  display:block;
+  margin: 0 auto;
+}
+
+.head {
+  padding: 0px;
+  text-align: center;
+}
+.contact-image {
+  display: none;
+}
+}
+
+@media (max-width: 576px) {
+  .navbar-brand,
+  .contact-image,
+  .about-image,
+  .index-image,
+  .work-image {
+    display: none;
+  }
+  iframe {
+    display: block;
+    margin: 0 auto;
+    width: 320px;
+    height: 200px;
+  }
+}
+@media (min-width: 576px) {
+  .index-mobile-image,
+  .about-mobile-image,
+  .work-mobile-image {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  .contact-mobile-image {
+    display: none;
+  }
+}
