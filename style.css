@@ -1,520 +1,241 @@
-:root {
-  --first-color: #7f7f7f;
-  --second-color: #ffffff;
-  --headings: "Raleway", sans-serif;
-  --body: "Nunito", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PRONE.ID — Detail Proyek</title>
 
-body { /* Warna bg tengah*/
-  font-family: var(--body); 
-  background-color: #292a2d; 
-  color: #ffffff;
-}
+  <!-- Fonts (beda dari halaman utama) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
-html, body {
-  overflow-x:hidden;}
+  <!-- Style khusus halaman detail -->
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Detail proyek PRONE.ID: Drone mapping, IoT telemetry, dan dashboard.">
+</head>
+<body>
 
-#navbar { /*Warna atas*/
-  max-width: 10000px;
-  position: fixed;
-  background-color: #162450;
-}
+  <!-- Top bar minimal -->
+  <header class="topbar">
+    <div class="wrap">
+      <a class="back" href="index.html#projects" aria-label="Kembali">← Kembali</a>
+      <nav class="mininav">
+        <a href="#overview">Overview</a>
+        <a href="#arsitektur">Arsitektur</a>
+        <a href="#hasil">Hasil</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#tautan">Tautan</a>
+      </nav>
+    </div>
+  </header>
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-}
+  <!-- Hero full-bleed terang -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow">Case Study</p>
+        <h1 class="title">
+          PRONE.ID
+          <span>Drone Mapping • IoT • Dashboard</span>
+        </h1>
+        <p class="lead">
+          Sistem pemetaan & penyiraman berbasis drone, node sensor kelembapan, dan
+          Raspberry&nbsp;Pi Station yang mengalirkan data ke dashboard terpusat untuk
+          pengambilan keputusan cepat di lahan sawit.
+        </p>
 
-.navbar-brand {
-  margin: 0px;
-}
+        <ul class="badges">
+          <li><strong>Durasi:</strong> 6 bulan</li>
+          <li><strong>Peran:</strong> Data Engineer & Robotics</li>
+          <li><strong>Tahun:</strong> 2022</li>
+          <li><strong>Tim:</strong> PRONTALA</li>
+        </ul>
 
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  display: inline;
-  list-style: none;
-  line-height: 42px;
-  margin-left: 15px;
-}
+        <div class="cta">
+          <a class="btn" href="https://naufalelyzar11.github.io/AMD/" target="_blank" rel="noreferrer">Laman Proyek</a>
+          <a class="btn ghost" href="#galeri">Lihat Galeri</a>
+        </div>
+      </div>
 
-nav a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: all 100ms ease-in-out;
-}
+      <!-- gambar hero -->
+      <figure class="hero__media">
+        <img src="https://i.postimg.cc/vHcm4nBx/Drone.jpg" alt="Drone PRONE.ID" />
+        <figcaption>Prototype sprayer pada frame uji.</figcaption>
+      </figure>
+    </div>
+  </section>
 
-nav li a:hover {
-  color: var(--first-color);
-}
-nav li.active a {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 50%,
-    #133298 50%
-  );
-}
+  <!-- Layout: sidebar sticky + konten -->
+  <main class="wrap layout">
+    <aside class="toc" aria-label="Daftar isi">
+      <h3>Ringkasan</h3>
+      <a class="toc__link active" href="#overview">Overview</a>
+      <a class="toc__link" href="#tujuan">Tujuan</a>
+      <a class="toc__link" href="#arsitektur">Arsitektur</a>
+      <a class="toc__link" href="#pipeline">Pipeline Data</a>
+      <a class="toc__link" href="#hasil">Hasil & KPI</a>
+      <a class="toc__link" href="#galeri">Galeri</a>
+      <a class="toc__link" href="#tautan">Tautan</a>
+    </aside>
 
-nav li.active a:hover {
-  color: #ffffff;
-}
-.row {
-  display: flex;
-  align-items: center;
-}
-.head {
-  padding: 250px 0px 250px 100px;
-}
-h1 {
-  font-family: var(--headings);
-  font-weight: 300;
-  font-size: 80px;
-  margin-bottom: 0;
-}
+    <article class="content">
+      <section id="overview" class="block">
+        <h2>Overview</h2>
+        <p>
+          PRONE.ID menggabungkan <strong>drone mapping & spraying</strong> dengan
+          <strong>node IoT</strong> (kelembapan tanah/udara & suhu) dan
+          <strong>Raspberry&nbsp;Pi Station</strong> sebagai gateway. Data tervalidasi mengalir ke
+          penyimpanan terstruktur untuk dianalisis dan divisualisasikan di dashboard.
+        </p>
+        <div class="kpi">
+          <div class="kpi__item"><div class="num">-22%</div><span>Pemakaian air</span></div>
+          <div class="kpi__item"><div class="num">+31%</div><span>Kecepatan pemetaan</span></div>
+          <div class="kpi__item"><div class="num">~3cm/px</div><span>Ground sampling</span></div>
+        </div>
+      </section>
 
-.about {
-  text-align: center;
-}
+      <section id="tujuan" class="block alt">
+        <h2>Tujuan</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>Masalah</h3>
+            <ul>
+              <li>Sulitnya monitoring.</li>
+              <li>Proses pemetaan manual, sulit distandardisasi.</li>
+              <li>Penyiraman manual yang mana itu boros tenaga dan waktu.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Target</h3>
+            <ul>
+              <li>Pemetaan otomatis.</li>
+              <li>Penyiraman otomatis.</li>
+              <li>Monitoring suhu dan kelembapan di berbagai titik lahan.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-h2 {
-  font-family: var(--headings);
-  font-weight: 300;
-  margin: 0px 50px;
-}
+      <section id="arsitektur" class="block">
+        <h2>Arsitektur</h2>
+        <div class="grid2">
+          <div class="card">
+            <h4>Komponen</h4>
+            <ol>
+              <li>Drone (grid flight, spraying control)</li>
+              <li>Node IoT (kelembapan Tanah & suhu)</li>
+              <li>Raspberry Pi Station (Pusat data & Monitoring)</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h4>Stack</h4>
+            <div class="stack">
+              <span>Python</span><span>NRF24</span><span>Raspberry&nbsp;Pi</span>
+              <span>CPP</span><span>Arduino</span><span>Map</span>
+              
+            </div>
+          </div>
+        </div>
+      </section>
 
-.selection {
-  text-align: center;
-}
-.curious-for-more {
-  font-weight: 200;
-}
+      <section id="pipeline" class="block alt">
+        <h2>Alur kerja</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="step__no">1</span>
+            <div><h5>Mapping</h5><p>Drone terbang dengan pola grid lalu melakukan pemetaan & penyiraman otomatis.</p></div>
+          </div>
+          <div class="step">
+            <span class="step__no">2</span>
+            <div><h5>Data</h5><p>Node mengambil data kelembapan tanah dan suhu di beberapa titik.</p></div>
+          </div>
+          <div class="step">
+            <span class="step__no">3</span>
+            <div><h5>Visual</h5><p>Dashboard Monitoring di aplikasi.</p></div>
+          </div>
+        </div>
+      </section>
 
-h3 {
-  font-family: var(--body);
-  font-weight: 200;
-  margin-top: 0;
-  font-size: 25px;
-}
+      <section id="hasil" class="block">
+        <h2>Hasil & KPI</h2>
+        <ul class="list">
+          <li>Hemat air hingga <strong>22%</strong> dengan spraying terarah.</li>
+          <li>Waktu pemetaan turun <strong>31%</strong> berkat lintasan grid terencana.</li>
+          <li>Resolusi ortho mencapai <strong>~3cm/px</strong>.</li>
+        </ul>
+      </section>
 
-.education,
-.why-work-with-me {
-  text-align: right;
-}
+      <section id="galeri" class="block alt">
+        <h2>Galeri</h2>
+        <p class="muted">Klik untuk perbesar
 
-.weather-app,
-.eighties-app {
-  margin: 0px 0px 20px 0px;
-}
+        <div class="gallery">
+          <!-- 16:9 -->
+          <a class="gallery__item" href="https://i.postimg.cc/vHcm4nBx/Drone.jpg" data-caption="Penerbangan uji – mapping grid">
+            <img src="https://i.postimg.cc/vHcm4nBx/Drone.jpg" alt="Drone flight" />
+          </a>
+          <!-- 9:16 -->
+          <a class="gallery__item portrait" href="https://i.postimg.cc/T2psFGZZ/IMG-20230109-WA0032.jpg" data-caption="Node sensor (portrait)">
+            <img src="https://i.postimg.cc/T2psFGZZ/IMG-20230109-WA0032.jpg" alt="Node sensor" />
+          </a>
+          <!-- 16:9 -->
+          <a class="gallery__item" href="https://i.postimg.cc/fLFSPwYz/IMG-20230109-WA0039.jpg" data-caption="Raspi Station & panel">
+            <img src="https://i.postimg.cc/fLFSPwYz/IMG-20230109-WA0039.jpg" alt="Raspi Station" />
+          </a>
+        </div>
+      </section>
 
-.contact-button,
-.about-button,
-.work-button,
-.second-contact-button,
-.launch-button {
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 300;
-  text-decoration: none;
-  background: var(--first-color);
-  border-radius: 12px;
-  padding: 15px 30px;
-}
+      <section id="tautan" class="block">
+        <h2>Tautan</h2>
+        <div class="buttons">
+          <a class="btn" href="https://naufalelyzar11.github.io/AMD/" target="_blank" rel="noreferrer">Website</a>
+          <a class="btn ghost" href="#" aria-disabled="true">PDF Report (coming soon)</a>
+          <a class="btn ghost" href="https://naufalelyzar11.github.io/myArtikel/" target="_blank">Semua Proyek</a>
+        </div>
+      </section>
+    </article>
+  </main>
 
-.contact-button:hover,
-.about-button:hover,
-.work-button:hover,
-.second-contact-button:hover,
-.launch-button:hover,
-.third-contact-button:hover {
-  background-color: var(--second-color);
-  transition: 0.3s ease !important;
-  color: #ffffff;
-}
+  <footer class="foot">
+    <div class="wrap">
+      <small>© <span id="yr"></span> Naufal Elyzar • Halaman detail (tema terang)</small>
+    </div>
+  </footer>
 
-.process-titles {
-  text-align: center;
-  font-size: 25px;
+  <!-- JS kecil: tahun, scroll-spy, lightbox -->
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
-}
+    // Scroll spy
+    const tocLinks = [...document.querySelectorAll('.toc__link')];
+    const targets  = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
+    const onScroll = () => {
+      const y = scrollY + 120; let active = 0;
+      targets.forEach((sec,i)=>{ if(sec && sec.offsetTop <= y) active = i; });
+      tocLinks.forEach((a,i)=> a.classList.toggle('active', i===active));
+    };
+    document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-.icon {
-  width: 360px;
-  display: block;
-  margin: 0 auto;
-}
-
-.miniicon{
-  width: 40px;
-}
-
-hr {
-  color: var(--second-color);
-  margin: 30px;
-}
-
-p {
-  font-size: 20px;
-  font-weight: 200;
-  margin: 25px 50px;
-  text-align: justify;
-}
-
-.project-info {
-  margin: 0 auto;
-}
-
-.intro {
-  text-align: center;
-  font-size: 50px;
-}
-
-.about-intro {
-  text-align: center;
-}
-
-.youtube-intro {
-  text-align: center;
-}
-
-.cv {
-  display: block;
-  text-align:center;
-  text-decoration: none;
-  color: var(--first-color);
-  font-size: 20px;
-  transition: 0.3s ease !important;
-}
-
-.cv:hover {
-  color: var(--second-color);
-  font-size: 23px;
-  transition: 0.3s ease !important;
-}
-
-.third-contact-button {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-}
-
-.work-image {
-  width: 500px;
-  border-radius: 20px;
-  display: block;
-  margin: 0 auto;
-  
-}
-
-.project-image {
-  width: 500px;
-  border-radius: 20px;
-  display: block;
-  margin: 10px 10px;
-}
-
-.projects {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-iframe {
-  display: block;
-  margin: 0 auto;
-}
-.about-button {
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-  vertical-align: middle;
-  margin: 30px auto;
-  width: 170px;
-}
-
-.subscribe {
-  color: var(--second-color);
-  text-decoration: none;
-}
-
-.subscribe:hover {
-  color: var(--first-color);
-  transition: 0.3s ease;
-}
-
-footer {
-  text-align: center;
-}
-
-.container-footer {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.social {
-  color: var(--first-color);
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.social:hover {
-  color: var(--second-color);
-  transition: 0.3s ease;
-  font-weight: 400;
-}
-
-.email {
-  color: var(--first-color);
-  font-size: 18px;
-  vertical-align: middle;
-}
-
-.work-button,
-.second-contact-button {
-  margin: 0px 5px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  vertical-align: middle;
-}
-
-.icons {
-  color: var(--first-color);
-}
-i {
-  margin: 0px 3px;
-}
-
-.work {
-  margin: 50px 0px;
-}
-
-.third-contact-button {
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: 300;
-  text-decoration: none;
-  background: var(--first-color);
-  border-radius: 12px;
-  padding: 15px 30px;
-}
-
-.contact-row {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.contact {
-  vertical-align: middle;
-  margin: 30px 0px;
-  text-align: center;
-}
-
-.contact-info {
-  text-align: center;
-  font-size: 25px;
-}
-
-.contact-image,
-.index-image,
-.work-image {
-  width: 600px;
-}
-
-.curiosities-image {
-  width: 600px;
-  display:block;
-  margin:0 auto;
-}
-
-.about-image {
-  display:block;
-  margin:0 auto;
-  width: 700px;
-}
-
-.form-control {
-  width: 520px;
-  font-family: var(--body);
-}
-
-.message {
-  text-align: center;
-}
-
-.btn {
-  background: var(--first-color);
-  border-color: var(--first-color);
-  font-family: var(--headings);
-}
-
-.btn:hover {
-  background: var(--second-color);
-  border-color: var(--second-color);
-}
-
-@media (max-width: 900px) {
-  nav {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  nav li {
-    font-size: 12px;
-    margin-left: 10px;
-  }
-  h1 {
-    font-size: 48px;
-    text-align: center;
-    margin-top: 60px;
-  }
-  .curious-for-more {
-    margin-top: 40px;
-  }
-  .contact-me {
-    margin-top: 0px;
-  }
-  h3 {
-    font-size: 25px;
-    text-align: center;
-    margin: 10px;
-  }
-  .contact-button {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: 170px;
-  }
-  .process-titles {
-    text-align: center;
-    font-size: 30px;
-  }
-  .skills {
-    display: block;
-    margin: 0 auto;
-  }
-  .intro {
-    font-size: 30px;
-  }
-  .projects {
-    display: block;
-    margin: 0 auto;
-  }
-  .project-image {
-    max-width: 350px;
-    margin: 20px auto;
-  }
-  iframe {
-    display: block;
-    margin: 0 auto;
-    width: 380px;
-    height: 300px;
-  }
-  .about-button {
-    margin: 10px auto;
-  }
-  .col-sm-4 {
-    display: inline;
-    width: 85px;
-    text-align: center;
-  }
-  p {
-    font-size: 20px;
-    font-weight: 200;
-    margin: 10px 15px;
-  }
-  h2 {
-    margin: 0px 15px;
-    font-size: 30px;
-  }
-  .buttons {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: 190px;
-  }
-  .work-button,
-  .second-contact-button {
-    display: block;
-    margin: 15px auto;
-    font-size: 15px;
-  }
-  .launch-button {
-    display: block;
-    margin: 0 auto;
-    font-size: 13px;
-    width: 170px;
-    text-align: center;
-  }
-  .work {
-    margin: 5px;
-  }
-  .weather-app,
-  .eighties-app {
-    text-align: center;
-  }
-  .third-contact-button {
-    margin: 10px auto;
-  }
-  .contact {
-    margin: 10px;
-  }
-  .contact-info {
-    font-size: 20px;
-  }
-  .form-control {
-    width: 250px;
-  }
-  .index-mobile-image,
-  .about-mobile-image,
-  .work-mobile-image {
-    width: 300px;
-    display: block;
-    margin: 0 auto;
-  }
-.contact-mobile-image {
-  width: 250px;
-  display:block;
-  margin: 0 auto;
-}
-
-.head {
-  padding: 0px;
-  text-align: center;
-}
-.contact-image {
-  display: none;
-}
-}
-
-@media (max-width: 576px) {
-  .navbar-brand,
-  .contact-image,
-  .about-image,
-  .index-image,
-  .work-image {
-    display: none;
-  }
-  iframe {
-    display: block;
-    margin: 0 auto;
-    width: 320px;
-    height: 200px;
-  }
-}
-@media (min-width: 576px) {
-  .index-mobile-image,
-  .about-mobile-image,
-  .work-mobile-image {
-    display: none;
-  }
-}
-@media (min-width: 900px) {
-  .contact-mobile-image {
-    display: none;
-  }
-}
+    // Lightbox
+    const lb = document.createElement('div');
+    lb.className = 'lightbox'; lb.innerHTML = `
+      <button class="lightbox__close" aria-label="Tutup">×</button>
+      <img alt="preview"/><div class="lightbox__cap"></div>`;
+    document.body.appendChild(lb);
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('.lightbox__cap');
+    const closeLB = ()=>{ lb.classList.remove('open'); lbImg.src=''; document.body.style.overflow=''; };
+    lb.addEventListener('click', e=>{ if(e.target===lb) closeLB(); });
+    lb.querySelector('.lightbox__close').onclick = closeLB;
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLB(); });
+    document.querySelectorAll('.gallery__item').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        lbImg.src = a.getAttribute('href');
+        lbCap.textContent = a.dataset.caption || '';
+        lb.classList.add('open');
+        document.body.style.overflow='hidden';
+      });
+    });
+  </script>
+</body>
+</html>
